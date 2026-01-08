@@ -23,7 +23,9 @@ A demonstration Vivado project is created here.
 
 Create Block Design, and add a Zynq UltraScale+ MPSoC IP core. Click Run Block Automation at the top of the interface to apply the board's default settings to the Zynq IP core.
 
-![image-20260107123402749](https://github.com/fishBone000/KR260-BOOT.bin-HOWTO/blob/main/image-20260107123402749.png)将IP核右侧的两个pl_clk连接到左侧的maxihpmX_fpd_aclk。
+![image-20260107123402749](https://github.com/fishBone000/KR260-BOOT.bin-HOWTO/blob/main/image-20260107123402749.png)
+
+Connect the two **pl_clk** signals on the right side of the IP core to the **maxihpmX_fpd_aclk** ports on the left side.
 Double-click to enter the IP core settings and enable both UARTs. For UART1, select `MIO 36 .. 37`, and for UART0, select EMIO to route the output through the board's pins.
 
 > The reason for selecting MIO 36 and 37 is that these two MIOs on the KR260 are connected to the onboard Micro-USB interface. This can be verified on the JTAG/UART page of the official schematic; simply search for MIO36 and MIO37 in the schematic PDF.
