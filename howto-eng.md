@@ -1,7 +1,8 @@
-Zynq KR260 Bare-Metal Firmware Upload
+## Zynq KR260 Bare-Metal Firmware Upload
 
 This article provides a method for generating BOOT.bin and uploading it to the KR260 development board for readers' reference. I am writing this because I encountered several pitfalls in this area; now that I have figured it out, I am sharing it to help others.
-Pitfalls I Encountered
+
+### Pitfalls I Encountered
 
 The QSPI on the KR260 board comes with official default firmware, and the KR260 boots from this firmware. However, since this firmware is U-Boot, it does not load a bare-metal BOOT.bin when reading the SD card; instead, it looks for boot.scr.uimg used for Linux booting. Therefore, unless the QSPI contains an FSBL capable of reading the BOOT.bin from the SD card via the USB hub, simply copying BOOT.bin to the SD card will not correctly boot a bare-metal program.
 
@@ -20,7 +21,7 @@ Environment: Vivado & Vitis 2025.2. Steps for other versions should be similar.
 
     I am using 2025.2 because 2022 had severe, usability-impacting bugs on my OS; it is not necessarily the best version to use.
 
-Create Vivado Project and Export Hardware
+### Create Vivado Project and Export Hardware
 
 A demonstration Vivado project is created here.
 
