@@ -146,7 +146,8 @@ You should now see brief FSBL messages on the serial port, followed by your appl
 ![image-20260107133155469](https://github.com/fishBone000/KR260-BOOT.bin-HOWTO/blob/main/image-20260107133155469.png)
 
 Since we previously set the stdio for both the FSBL and the application BSP to uart1, we can receive the xil_printf messages from both via the USB cable. In the application code, Hello World! is output using UART0, so those messages are received through the Raspberry Pi expansion pins. Furthermore, since UART0 uses EMIO—routing through the PL to the pins—this confirms that our PL has also been successfully configured!
-Custom FSBL
+
+### Custom FSBL
 
 Vitis allows you to import an FSBL template, which means we have better control over the FSBL, such as adding debug information or even modifying the code. Additionally, since importing an XSA does not update workspace_root/platform/zynqmp_fsbl/psu_init.c, importing an FSBL template serves as a workaround for this issue.
 
